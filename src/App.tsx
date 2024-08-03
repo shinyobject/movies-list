@@ -19,7 +19,7 @@ function YouTubeLink({ isIOS,videoId }: { isIOS: boolean, videoId: string}) {
   };
 
   return (
-    <a href="#" onClick={openYouTubeLink}>{videoId}</a>
+    <button onClick={openYouTubeLink}>{videoId}</button>
   );
 }
 
@@ -33,14 +33,9 @@ function App() {
   return (
     <>
       <h1>Movies on YouTube</h1>
-      <ul>
         {movies.map((movie) => (
-          <li key={movie}>
-            <YouTubeLink isIOS={device} videoId={movie} />
-          
-          </li>
+            <YouTubeLink key={movie} isIOS={device} videoId={movie} />
         ))}
-      </ul>
     </>
   );
 }
