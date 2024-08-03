@@ -1,0 +1,12 @@
+.ResizeButtons {
+    display: flex;
+    gap: 10px;
+}
+.ResizeButtons h1 {
+    flex-shrink: 0;
+    font-size: var( --font-size-h1);
+}
+.ResizeButtons button {
+    border-radius: 0;
+    text-align: center;
+}
