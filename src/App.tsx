@@ -1,5 +1,7 @@
+import { useEffect, useState } from 'react'
 import './App.css';
 import { movies } from './movies.ts';
+import styles from './App.module.css';
 
 
 
@@ -23,7 +25,33 @@ function YouTubeLink({ isIOS,videoId }: { isIOS: boolean, videoId: string}) {
   );
 }
 
+type ResizeButtonsProps = {
+  decreaseFontSize: () => void;
+  increaseFontSize: () => void;
+}
+
+function ResizeButtons({ decreaseFontSize, increaseFontSize}: ResizeButtonsProps) {
+  return (
+  <div className={styles.ResizeButtons}>
+  <h1>Movies on YouTube</h1>
+  <button onClick={decreaseFontSize}>A-</button>
+  <button onClick={increaseFontSize}>A+</button>
+  </div>)
+}
+
 function App() {
+  const [fontSize, setFontSize] = useState(16);
+
+  useEffect(() => {
+    document.documentElement.style.setProperty('--font-size-base', `${fontSize}px`);
+    // document.documentElement.style.setProperty('--font-size-h1', `${fontSize * 1.5}px`);
+    document.documentElement.style.setProperty('--font-size-button', `${fontSize}px`);
+  }, [fontSize]);
+
+  const increaseFontSize = () => setFontSize(prev => Math.min(prev + 2, 24));
+  const decreaseFontSize = () => setFontSize(prev => Math.max(prev - 2, 12));
+
+
   const isIOS = () => {
     const userAgent = window.navigator.userAgent.toLowerCase();
     return /iphone|ipad|ipod/.test(userAgent);
@@ -32,10 +60,10 @@ function App() {
 
   return (
     <>
-      <h1>Movies on YouTube</h1>
-        {movies.map((movie) => (
-            <YouTubeLink key={movie} isIOS={device} videoId={movie} />
-        ))}
+      <ResizeButtons decreaseFontSize={decreaseFontSize} increaseFontSize={increaseFontSize} />
+      { movies.map((movie) => (
+        <YouTubeLink key={movie} isIOS={device} videoId={movie} />
+      ))}
     </>
   );
 }
