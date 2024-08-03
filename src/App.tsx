@@ -40,12 +40,15 @@ function ResizeButtons({ decreaseFontSize, increaseFontSize}: ResizeButtonsProps
 }
 
 function App() {
-  const [fontSize, setFontSize] = useState(16);
+  const [fontSize, setFontSize] = useState(() => {
+    const savedFontSize = localStorage.getItem('fontSize');
+    return savedFontSize ? parseInt(savedFontSize, 10) : 16;
+  });
 
   useEffect(() => {
     document.documentElement.style.setProperty('--font-size-base', `${fontSize}px`);
-    // document.documentElement.style.setProperty('--font-size-h1', `${fontSize * 1.5}px`);
     document.documentElement.style.setProperty('--font-size-button', `${fontSize}px`);
+    localStorage.setItem('fontSize', fontSize.toString());
   }, [fontSize]);
 
   const increaseFontSize = () => setFontSize(prev => Math.min(prev + 2, 24));
