@@ -33,7 +33,7 @@ type ResizeButtonsProps = {
 function ResizeButtons({ decreaseFontSize, increaseFontSize}: ResizeButtonsProps) {
   return (
   <div className={styles.ResizeButtons}>
-  <h1>Movies on YouTube</h1>
+  <h1>Movies<br/>on YouTube</h1>
   <button onClick={decreaseFontSize}>A-</button>
   <button onClick={increaseFontSize}>A+</button>
   </div>)

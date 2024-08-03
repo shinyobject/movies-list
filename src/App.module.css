@@ -9,4 +9,5 @@
 .ResizeButtons button {
     border-radius: 0;
     text-align: center;
+    font-size: 2rem;
 }
