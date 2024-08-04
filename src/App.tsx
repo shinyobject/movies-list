@@ -33,7 +33,7 @@ type ResizeButtonsProps = {
 function ResizeButtons({ decreaseFontSize, increaseFontSize}: ResizeButtonsProps) {
   return (
   <div className={styles.ResizeButtons}>
-  <h1>Movies<br/>on YouTube</h1>
+  <h1><span>Movies&nbsp;</span><span>on YouTube</span></h1>
   <button onClick={decreaseFontSize}>A-</button>
   <button onClick={increaseFontSize}>A+</button>
   </div>)
@@ -64,9 +64,11 @@ function App() {
   return (
     <>
       <ResizeButtons decreaseFontSize={decreaseFontSize} increaseFontSize={increaseFontSize} />
+      <main>
       { movies.map((movie) => (
         <YouTubeLink key={movie} isIOS={device} videoId={movie} />
       ))}
+      </main>
     </>
   );
 }

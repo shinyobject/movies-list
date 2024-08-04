@@ -1,6 +1,7 @@
 .ResizeButtons {
     display: flex;
     gap: 10px;
+    margin-bottom:10px;
 }
 .ResizeButtons h1 {
     flex-shrink: 0;
