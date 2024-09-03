@@ -37,6 +37,7 @@ export type MovieData = {
     { title: 'Barry Lyndon', releaseYear: 1975, dateAdded: '8/1/2024' },
     { title: 'BASEketball', releaseYear: 1998, dateAdded: '8/1/2024' },
     { title: 'Batman Begins', releaseYear: 2005, dateAdded: '8/1/2024' },
+    { title: 'Beetlejuice', releaseYear: 1988, dateAdded: '9/1/2024' },
     { title: 'Bells are Ringing', releaseYear: 1960, dateAdded: '8/1/2024' },
     { title: 'Bend It Like Beckham', releaseYear: 2002, dateAdded: '8/1/2024' },
     { title: 'Big', releaseYear: 1988, dateAdded: '8/1/2024' },
