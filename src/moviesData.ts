@@ -453,7 +453,7 @@ export type MovieData = {
     { title: 'The Wrong Man', releaseYear: 1956, dateAdded: '8/1/2024' },
     { title: 'X2', releaseYear: 2003, dateAdded: '8/1/2024' },
     { title: 'Zootopia', releaseYear: 2016, dateAdded: '8/1/2024' },
-    { title: 'Deadpool and Wolverine', releaseYear: 2016, dateAdded: '10/1/2024' },
+    { title: 'Deadpool and Wolverine', releaseYear: 2024, dateAdded: '10/1/2024' },
   ];
   
   export default moviesData;
